@@ -5,11 +5,11 @@
  https://softuni.bg/trainings/2832/js-fundamentals-may-2020/internal#lesson-15203
 
  Lecture targets:
- Introduction and IDE
- JavaScript Syntax
- Conditional Statements
- Loops
- Debugging and Troubleshooting
+ Introduction and IDE;
+ JavaScript Syntax;
+ Conditional Statements;
+ Loops;
+ Debugging and Troubleshooting;
 
  Lab Exercises:
  https://judge.softuni.bg/Contests/1189/Basic-Syntax-Conditional-Statements-and-Loops-Lab
