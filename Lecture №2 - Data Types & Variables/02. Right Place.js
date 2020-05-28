@@ -1,20 +1,11 @@
 function solve(firstString, character, targetString) {
-    let currentCharacter = '';
-    let underscorePosition = 0;
     let editedString = '';
 
     for (let i = 0; i < firstString.length; i++) {
-        currentCharacter = firstString[i];
-        if (currentCharacter == '_') {
-            underscorePosition = i;
-        }
-    }
-
-    for (let j = 0; j < firstString.length; j++) {
-        if (j != underscorePosition) {
-            editedString += `${firstString[j]}`;
+        if (firstString[i] == '_') {
+            editedString += character;
         } else {
-            editedString += `${character}`;
+            editedString += firstString[i];
         }
     }
 
