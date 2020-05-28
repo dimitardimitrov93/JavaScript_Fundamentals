@@ -10,7 +10,7 @@ function solve(numberInput) {
 
     sum = sum.toString();
 
-    if ((sum.includes('9', [sum.length - 1]))) {
+    if (sum.includes('9')) {
         console.log(`${numberInput} Amazing? True`);
     } else {
         console.log(`${numberInput} Amazing? False`);
