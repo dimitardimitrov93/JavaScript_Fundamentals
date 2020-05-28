@@ -40,6 +40,7 @@ function goldDigger(input) {
     if (totalNumOfPurchasedBitcoins > 0) {
         console.log(`Day of the first purchased bitcoin: ${dayOfTheFirstPurchasedBitcoin}`);
     }
+    
     console.log(`Left money: ${currentMoneyInLeva} lv.`);
 }
 
