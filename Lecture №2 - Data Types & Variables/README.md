@@ -6,12 +6,19 @@
 
  Lecture targets:
     What is a data type?
+    
     Let vs. Var
+    
     Strings
+    
     Numbers
+    
     Booleans
+    
     Arrays and Objects
+    
     Typeof operator
+    
     Undefined and Null
 
  Lab Exercises:
