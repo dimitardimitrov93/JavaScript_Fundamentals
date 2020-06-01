@@ -5,13 +5,21 @@
  https://softuni.bg/trainings/2832/js-fundamentals-may-2020/internal#lesson-15205
 
  Lecture targets:
+ 
     What is a data type?
+    
     Let vs. Var
+    
     Strings
+    
     Numbers
+    
     Booleans
+    
     Arrays and Objects
+    
     Typeof operator
+    
     Undefined and Null
 
  Lab Exercises:
