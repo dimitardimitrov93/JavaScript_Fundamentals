@@ -3,7 +3,7 @@ function solve(dayNumber) {
     let daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     let currentDay = '';
 
-    if (dayNumber >= 0 && dayNumber <= (daysOfWeek.length - 1)) {
+    if (dayNumber >= 1 && dayNumber <= (daysOfWeek.length)) {
         currentDay = daysOfWeek[dayNumber - 1];
 
         console.log(currentDay);
@@ -12,4 +12,4 @@ function solve(dayNumber) {
     }
 }
 
-solve(11);
+solve(0);
