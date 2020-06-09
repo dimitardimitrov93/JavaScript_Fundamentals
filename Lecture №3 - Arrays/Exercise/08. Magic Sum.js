@@ -1,47 +1,22 @@
-function solve(arrayInput) {
-    
-    let previousNumber;
-    let currentNumber = 0;
-    let currentSequence = [];
-    let currentLongestSequence = [];
-    let currentSequenceEqualityCounter = 0;
-    let previousSequenceEqualityCounter = 0;
+function solve(arrayInput, magicNumber) {
+
+    let magicPair = [];
     let printLine = '';
 
     for (let i = 0; i < arrayInput.length; i++) {
-        currentNumber = arrayInput[i];
-        if (currentNumber == previousNumber) {
-            if (currentSequenceEqualityCounter == 0) {
-                currentSequence.push(previousNumber);
-                currentSequence.push(currentNumber);
-                currentSequenceEqualityCounter++;
-            } else {
-                currentSequence.push(currentNumber);
+        for (let j = i + 1; j < arrayInput.length; j++) {
+            if ((arrayInput[i] + arrayInput[j]) == magicNumber) {
+                magicPair[0] = arrayInput[i];
+                magicPair[1] = arrayInput[j];
+
+                printLine = `${magicPair[0]} ${magicPair[1]}`;
+
+                console.log(printLine);
             }
-            currentSequenceEqualityCounter++;
-        } else if (i > 0 && currentNumber != previousNumber) {
-            previousNumber = currentNumber;
-
-            if (currentSequenceEqualityCounter > previousSequenceEqualityCounter) {
-                currentLongestSequence = currentSequence;
-                previousSequenceEqualityCounter = currentSequenceEqualityCounter;
-            }
-
-            currentSequence = [];
-            currentSequenceEqualityCounter = 0;
-        } else {
-            previousNumber = currentNumber;
         }
+        magicPair = [];
+        printLine = '';
     }
-
-    for (let j = 0; j < currentLongestSequence.length; j++) {
-        if (j < currentLongestSequence.length - 1) {
-            printLine += `${currentLongestSequence[j]} `;
-        } else {
-            printLine += `${currentLongestSequence[j]}`;
-        }
-    }
-    console.log(printLine);
 }
 
-solve([0, 1, 1, 5, 2, 2, 6, 3, 3]);
+solve([1, 7, 6, 2, 19, 23], 8);
