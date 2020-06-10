@@ -1,5 +1,4 @@
 function solve(dungeonRooms) {
-    // convert the initial array into a proper array that seprates each room
     let dungeonRoomsString = dungeonRooms.toString();
     let dungeonRoomsArray = dungeonRoomsString.split("|");
 
