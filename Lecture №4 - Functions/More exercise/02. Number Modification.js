@@ -5,7 +5,6 @@ function modifyNumber(numberInput) {
     let stringToInteger = string => Number(string);
 
     let currentString = '';
-
     let currentAverageSum = 0;
 
     function appendNumber(number) {
