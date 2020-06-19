@@ -79,12 +79,10 @@ function solution(arrayInput) {
             }
             
             printAndResetCounter(operationType, operationsCount);
+            currentThickness = transportAndWashing(currentThickness);
 
-            if (currentThickness !== targetThickness) {
-                currentThickness = transportAndWashing(currentThickness);
-            } else {
-                currentThickness = transportAndWashing(currentThickness);
-                console.log(`Finished crystal ${currentThickness} microns`);
+            if (currentThickness === targetThickness) {
+                console.log(`Finished crystal ${currentThickness} microns`)
             }
         }
     }
