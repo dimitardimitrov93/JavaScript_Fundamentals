@@ -3,9 +3,8 @@ function productsList(arrayInput) {
     let arr = arrayInput.slice();
     let sortedArray = arr.sort((a, b) => a.localeCompare(b));
 
-    for (const index in sortedArray) {
-        sortedArray[index] = `${Number(index) + 1}.${sortedArray[index]}`;
-        console.log(sortedArray[index]);
+    for (let i = 0; i < sortedArray.length; i++) {
+        console.log(`${i + 1}.${sortedArray[i]}`);
     }
 }
 
