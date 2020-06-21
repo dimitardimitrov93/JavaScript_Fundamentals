@@ -21,8 +21,7 @@ function arrayManipulator(arrayInput) {
         if (command === 'Add') {
             arrToManipulate.push(commandFirstValue);
         } else if (command === 'Remove') {
-            let itemForRemoval = arrToManipulate.indexOf(commandFirstValue);
-            arrToManipulate.splice(itemForRemoval, 1);
+            arrToManipulate = arrToManipulate.filter(element => element !== commandFirstValue);
         } else if (command === 'RemoveAt') {
             arrToManipulate.splice(commandFirstValue, 1);
         } else if (command === 'Insert') {
