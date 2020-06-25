@@ -3,28 +3,27 @@ function bombNumbers(firstArrayInput, secondArrayInput) {
     let firstArray = firstArrayInput.slice();
     let secondArray = secondArrayInput.slice();
 
-    let trigger = secondArray[0];
-    let bombPower = secondArray[1];
+    let bomb = secondArray[0];
+    let bombRange = secondArray[1];
 
-    let start = 0;
-    let numbersAboutToBlow = 0;
-
+    let length = firstArray.length;
     let sum = 0;
 
-    for (let i = 0; i < firstArray.length; i++) {
+    while (firstArray.includes(bomb)) {
+        let bombIndex = firstArray.indexOf(bomb);
+        let startOfExplosion = Math.max(0, (bombIndex - bombRange));
+        let endOfExplosion = Math.min(length, (bombIndex + bombRange));
+ 
+        let currentRange = ((Math.abs((startOfExplosion) - (endOfExplosion + 1))));
 
-        if (firstArray[i] === trigger) {
-
-            start = Math.max(0, i - bombPower);
-            numbersAboutToBlow = bombPower * 2 + 1;
-
-            firstArray.splice(start, numbersAboutToBlow);
-            i = i - bombPower - 1;
-        }
+        firstArray.splice(startOfExplosion, currentRange);
     }
 
     sum = (firstArray.reduce((a, b) => a + b, 0));
     return sum;
 }
 
-bombNumbers([1, 1, 2, 1, 1, 1, 2, 1, 1, 1], [2, 1]);
+bombNumbers(
+    [1, 1, 2, 1, 1, 1, 2, 1, 1, 1],
+    [2, 1]
+);
