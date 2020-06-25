@@ -2,6 +2,8 @@ function arrayManipulator(intArrayInput, strArrayInput) {
     let intArray = intArrayInput.slice();
     let strArray = strArrayInput.slice();
 
+    let printLine = '';
+
     while (strArray.length > 0) {
 
         let currentCommandArr = strArray.shift().split(' ');
@@ -17,38 +19,14 @@ function arrayManipulator(intArrayInput, strArrayInput) {
         } else if (currentCommand === 'addMany') {
 
             tempArr = intArray.slice();
-            intArray = [];
-
-            let currentCommandArrLength =  currentCommandArr.length - 1;
 
             let index = Number(currentCommandArr.shift());
-            let loopEnd = ((tempArr.length) + currentCommandArr.length);
+            let loopEnd = currentCommandArr.length;
 
             for (let i = 0; i < loopEnd; i++) {
-                if (index === 0) {
-                    if (i < currentCommandArrLength) {
-                        intArray.push(Number(currentCommandArr.shift()));
-                    } else {
-                        intArray.push(Number(tempArr.shift()));
-                    }
-                } else {
-                    if (i <= (index + currentCommandArrLength)) {
-                        tempArr.push(Number(currentCommandArr.shift()));
-                    } else {
-                        intArray.push(Number(tempArr.shift()));
-                    }
-
-                    intArray = tempArr.slice();
-                }
+                intArray.splice(index, 0, Number(currentCommandArr[i]));
+                index++;
             }
-
-            // for (let i = 0; i < loopEnd; i++) {
-            //     if (i < index || i >= currentCommandArrLength) {
-            //         intArray.push(Number(tempArr.shift()));
-            //     } else if ((i >= index) && (i < (i + currentCommandArrLength))) {
-            //         intArray.push(Number(currentCommandArr.shift()));
-            //     }
-            // }
 
         } else if (currentCommand === 'contains') {
             console.log(intArray.findIndex(element => element === firstValue));
@@ -61,7 +39,17 @@ function arrayManipulator(intArrayInput, strArrayInput) {
         } else if (currentCommand === 'sumPairs') {
             intArray = sumArrPairs(intArray);
         } else if (currentCommand === 'print') {
-            console.log(intArray);
+            let length = intArray.length;
+            for (let i = 0; i < length; i++) {
+                if (i === 0) {
+                    printLine += `[ ${intArray[i]}, `;
+                } else if ((i > 0) && (i < (intArray.length - 1))) {
+                    printLine += `${intArray[i]}, `;
+                } else {
+                    printLine += `${intArray[i]} ]`;
+                }
+            }
+            console.log(printLine);
             break;
         }
     }
@@ -84,8 +72,9 @@ function arrayManipulator(intArrayInput, strArrayInput) {
     }
 }
 
-// arrayManipulator([1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],
-// ["sumPairs", "sumPairs", "addMany 0 -1 -2 -3", "print"]);
+// arrayManipulator([1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2], ["sumPairs", "sumPairs", "addMany 0 -1 -2 -3", "print"]);
 
-arrayManipulator([1, 2, 3, 4, 5],
-    ["addMany 5 9 8 7 6 5", "contains 15", "remove 3", "shift 1", "print"]);
+arrayManipulator(
+    [1, 2, 3, 4, 5],
+    ["addMany 0 9 8 7 6 5", "contains 15", "remove 3", "shift 1", "print"]
+    );
