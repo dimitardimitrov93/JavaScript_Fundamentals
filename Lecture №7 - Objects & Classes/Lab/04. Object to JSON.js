@@ -4,7 +4,7 @@ function solution(nameInput, lastNameInput, hairColorInput) {
         name: nameInput,
         lastName: lastNameInput,
         hairColor: hairColorInput
-    }
+    };
 
     let personInfoJson = JSON.stringify(personInfoObj);
 
