@@ -1,6 +1,7 @@
-function solution(arrInput) {
+function companyRegister(arrInput) {
     
     let arr = arrInput.slice();
+    let employeesList = [];
 
     class Employee {
         constructor(name, personalNumber) {
@@ -16,10 +17,11 @@ function solution(arrInput) {
     for (const element of arr) {
         let currentEmployee = new Employee(element, (element.length));
         currentEmployee.printInfo();
+        employeesList.push(currentEmployee);
     }
 }
 
-solution([
+companyRegister([
     'Silas Butler',
     'Adnaan Buckley',
     'Juan Peterson',
