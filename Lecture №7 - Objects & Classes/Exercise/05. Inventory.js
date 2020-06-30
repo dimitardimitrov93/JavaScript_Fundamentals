@@ -3,7 +3,7 @@ function heroesRegister(arrInput) {
     let arr = arrInput.slice();
     let length = arr.length;
 
-    let heroesArr = [];
+    let unsortedHeroesArr = [];
 
     class Hero {
         constructor(hero, level, items) {
@@ -47,13 +47,11 @@ function heroesRegister(arrInput) {
         }
 
         let sortedItems = unsortedItems.sort((a, b) => a.localeCompare(b));
-
         heroInfo.items = sortedItems.join(', ');
-
-        heroesArr.push([heroInfo.Hero, heroInfo.level, heroInfo.items]);      
+        unsortedHeroesArr.push([heroInfo.Hero, heroInfo.level, heroInfo.items]);      
     }
 
-    let sortedHeroesArr = heroesArr.sort((a, b) => a[1] - b[1]);
+    let sortedHeroesArr = unsortedHeroesArr.sort((a, b) => a[1] - b[1]);
 
     for (const index in sortedHeroesArr) {
         currentHeroInfoArr = sortedHeroesArr[index];

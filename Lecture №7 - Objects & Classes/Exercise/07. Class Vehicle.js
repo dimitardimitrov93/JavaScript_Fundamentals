@@ -2,18 +2,14 @@ function solution() {
     
     class Vehicle {
         constructor(type, model, parts, fuel) {
+            
             this.type = type;
             this.model = model;
             this.fuel = fuel;
-
-            let partsArr = Object.values(parts);
-            let engineValue = partsArr[0];
-            let powerValue = partsArr[1];
-
             this.parts = {
-                engine: engineValue,
-                power: powerValue,
-                quality: engineValue * powerValue
+                engine: parts.engine,
+                power: parts.power,
+                quality: parts.engine * parts.power
             };
         }
 
