@@ -1,7 +1,7 @@
 # JavaScript_Fundamentals
  Solved problems and tasks during the JavaScript Fundamentals course at SoftUni. The course curriculum: https://softuni.bg/trainings/2832/js-fundamentals-may-2020/internal
  
- <24.06.2020, 18:30 - 21:30> Lecture №7 - Object and Classes:
+ <24.06.2020, 18:30 - 21:30> Lecture №6 - Object and Classes:
  https://softuni.bg/trainings/2832/js-fundamentals-may-2020/internal#lesson-15217
 
    Objects

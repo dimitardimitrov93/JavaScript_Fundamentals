@@ -15,27 +15,43 @@ function register(arrInput) {
     }
 
     for (let k = 0; k < auxArr.length; k++) {
-        auxArr[k] = [auxArr[k]];
+        auxArr[k] = [{["systemName"]: auxArr[k]}];
     }
 
-    for (let l = 0; l < databaseArr.length; l++) {
 
+    for (let l = 0; l < databaseArr.length; l++) {
+        let flag = false;
         for (let m = 0; m < auxArr.length; m++) {
 
-            if (databaseArr[l][0] === auxArr[m][0]) {
+            if (databaseArr[l][0] === auxArr[m][0].systemName) {
+                console.log(auxArr[m].componentName);
+                console.log(databaseArr[l][1]);
+                
+                
+                for (let k = 0; k < auxArr[m].length; k++) {
+                    if (auxArr[m][k].componentName !== databaseArr[l][1]) {
+                        flag = true;
+                    } else {
+                        flag = false;
+                    }
+                }
 
-                if (!auxArr[m].includes(databaseArr[l][1])) {
-                    auxArr[m].push(databaseArr[l][1]);
+                if (flag) {
+                    auxArr[m].push({["componentName"]: databaseArr[l][1]});
                 }
             } 
         }
     }
 
     for (let n = 0; n < auxArr.length; n++) {
-        auxArr[n][0] = [auxArr[n][0]];
+        console.log(auxArr[n]);
+        console.log(auxArr[n].componentName);
+        console.log(auxArr[n].systemName);
+        
 
         for (let o = 0; o < auxArr[n].length; o++) {
-            auxArr[n][o] = [auxArr[n][o]];
+            console.log(databaseArr[n][o]);
+            
         }
     }
 
@@ -69,17 +85,18 @@ function register(arrInput) {
         }
     }
     
-    // doesnt sort correctly
     let sortedSystemsArr = auxArr.sort(function(a, b) {
          if (a.length !== b.length) {
-            return b[0].length - a[0].length;
+            return b.length - a.length;
          } else {
-            return a[0][0][0][0].toUpperCase().localeCompare(b[0][0][0][0].toUpperCase());
+            return a[0][0][0][0][0].toUpperCase().localeCompare(b[0][0][0][0][0].toUpperCase());
          }
     });
     
     for (let j = 0; j < sortedSystemsArr.length; j++) {
+
         for (let k = 0; k < sortedSystemsArr[j].length; k++) {
+            
             sortedSystemsArr[j][k].sort(function(a, b) {
                 return a.length - b.length;
             });
@@ -94,7 +111,6 @@ function register(arrInput) {
             console.log(`|||${sortedSystemsArr[i][j][0][0]}`);
 
             for (let k = 1; k < sortedSystemsArr[i][j].length; k++) {
-
                 console.log(`||||||${sortedSystemsArr[i][j][k]}`);
             }
         }
@@ -115,9 +131,7 @@ register([
     'Lambda | CoreC | C4',
     'Indice | Session | Default Storage',
     'Indice | Session | Default Security',
-    'a | aaa | Default Security | das1',
-    'a | $vf | Default Security | das1',
-    'a | fgfds | Default Security | das1',
-    'a | $fdasds | Default Security | das1',
-    'a | $vvvb | Default Security | das1'
+    'lambda | CoreA | A13',
+    'lambda | CoreB | A13',
+    'lambda | CoreC | A13',
 ]);
