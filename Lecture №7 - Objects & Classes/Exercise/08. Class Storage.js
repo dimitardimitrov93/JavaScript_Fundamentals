@@ -12,7 +12,7 @@ function solution() {
         }
 
         addProduct(product) {
-            /* the function receives in object that is stored within an array */
+            /* the function receives an object that is stored within an array */
             this.storage.push([product]);
             this.totalCost = 0;
 

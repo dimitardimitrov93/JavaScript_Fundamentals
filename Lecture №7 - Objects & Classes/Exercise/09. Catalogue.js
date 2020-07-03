@@ -18,13 +18,13 @@ function solution(arrayInput) {
 
     sortedProductsArr = unsortedProductsArr.sort((a, b) => a.localeCompare(b));
 
-    for (let j = 0; j < sortedProductsArr.length; j++) {
+    for (let k = 0; k < sortedProductsArr.length; k++) {
 
-        if (sortedProductsArr[j].length === 1) {
-            console.log(sortedProductsArr[j]);
+        if (sortedProductsArr[k].length === 1) {
+            console.log(sortedProductsArr[k]);
         } else {
-            sortedProductsArr[j] = sortedProductsArr[j].replace(' : ', ': ');
-            console.log(`  ${sortedProductsArr[j]}`);
+            sortedProductsArr[k] = sortedProductsArr[k].replace(' : ', ': ');
+            console.log(`  ${sortedProductsArr[k]}`);
         }
     }
 }
