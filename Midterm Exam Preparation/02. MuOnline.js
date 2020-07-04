@@ -2,7 +2,7 @@ function game(arrInput) {
 
     let arr = arrInput.slice();
 
-    let initialHealth = 100;
+    const initialHealth = 100;
     let initialBitcoins = 0;
 
     let currentHealth = initialHealth;
@@ -23,7 +23,6 @@ function game(arrInput) {
         let currentRoom = roomsArr[i].split(' ');
         let currentCommand = currentRoom[0];
         let currentValue = Number(currentRoom[1]);
-
 
         if (currentCommand === 'potion') {
 
