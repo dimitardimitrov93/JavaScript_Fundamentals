@@ -32,4 +32,4 @@ function binaryDigitsCounter(decimalIntInput, binaryDigitInput) {
     console.log(`Number of Specified Binary Digits: ${binaryDigitCounter}`);
 }
 
-binaryDigitsCounter(168312, 1);
+binaryDigitsCounter(283, 1);
