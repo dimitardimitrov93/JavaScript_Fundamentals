@@ -20,7 +20,9 @@ function storageInfo(currentStockArrInput, productsForDeliveryInput) {
         let currentDeliveryQuantity = productsForDelivery[1];
 
         if (currentStockArr.includes(currentDeliveryProduct)) {
+
             for (let i = 0; i < currentStockArr.length; i++) {
+                
                 if (currentStockArr[i] === currentDeliveryProduct) {
                     currentStockArr[i + 1] = ((Number(currentStockArr[i + 1]) + Number(currentDeliveryQuantity)).toString());
                     break;

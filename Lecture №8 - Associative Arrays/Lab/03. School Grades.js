@@ -15,7 +15,7 @@ function solve(arrInput) {
         }
     }
 
-    let sortedGrades = Object.entries(students).sort((a, b) => (a[1].reduce((a, b) => a + b, 0) / a[1].length) - (b[1].reduce((a, b) => a + b, 0) / b[1].length));
+    let sortedGrades = Object.entries(students).sort((a, b) => (a[1].reduce((acc, a) => acc + a, 0) / a[1].length) - (b[1].reduce((acc, a) => acc + a, 0) / b[1].length));
     
     sortedGrades.forEach(element => {
         console.log(`${element[0]}: ${element[1].join(', ')}`);
