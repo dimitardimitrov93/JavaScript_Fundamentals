@@ -2,7 +2,7 @@ function solve(word, stringToManipulate) {
 
     let result = stringToManipulate;
     
-    while (result.indexOf(word) !== -1) {
+    while (result.indexOf(word) >= 0) {
         result = result.replace(word, '');
     }
 
