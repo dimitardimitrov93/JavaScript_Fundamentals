@@ -13,9 +13,11 @@ function solve(arrInput) {
         currentChar = currentString[i];
 
         if (!allCharsIndices.hasOwnProperty(currentChar)) {
+
             allCharsIndices[currentChar] = [];
             allCharsIndices[currentChar].push(i);
         } else {
+            
             allCharsIndices[currentChar].push(i);
         }
     }

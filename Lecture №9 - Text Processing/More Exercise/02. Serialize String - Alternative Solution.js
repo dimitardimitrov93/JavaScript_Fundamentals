@@ -17,6 +17,7 @@ function solve(arrInput) {
         currentChar = currentString[i];
 
         if (!allCharsIndices.includes(currentChar)) {
+            
             while (currentString.includes(currentChar, previousIndex)) {
 
                 if (!currentCharIndices.includes(currentChar)) {
