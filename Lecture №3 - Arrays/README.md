@@ -18,7 +18,7 @@
  https://judge.softuni.bg/Contests/Practice/Index/1243#0
 
  All solutions have been tested with the automated judge system of SoftUni:
- https://judge.softuni.bg/Contests#!/List/ByCategory/15/Programming-Basics
+ https://judge.softuni.bg/Contests#!/List/ByCategory/147/JS-Fundamentals
 
  My submissions and participation:
  https://judge.softuni.bg/Users/Dimitar_Dimitrov93

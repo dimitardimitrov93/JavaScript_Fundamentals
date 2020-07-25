@@ -3,8 +3,9 @@
  
  <29.06.2020, 14:30 - 17:30> Lecture №7 - Associative Arrays:
  https://softuni.bg/trainings/2832/js-fundamentals-may-2020/internal#lesson-15219
-    
-  What Is a Bit?
-  Numerals Systems
-  Storing Information
-  Bitwise Operations
+
+ Lecture targets:   
+    What Is a Bit?
+    Numerals Systems
+    Storing Information
+    Bitwise Operations
