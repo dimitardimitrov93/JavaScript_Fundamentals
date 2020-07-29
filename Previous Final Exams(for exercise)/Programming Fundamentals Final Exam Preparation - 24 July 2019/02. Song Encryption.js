@@ -9,7 +9,6 @@ function solve(arrInput) {
 
     while (currentLine !== 'end') {
 
-        
         let isValidInput = inputValidatorRegEx.test(currentLine);
 
         if (isValidInput) {
