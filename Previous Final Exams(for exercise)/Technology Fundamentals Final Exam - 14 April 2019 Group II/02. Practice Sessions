@@ -1,0 +1,75 @@
+function solve(arrInput) {
+    
+    let arr = arrInput.slice();
+    let roadsAndRacers = {};
+
+    let currentLine = arr.shift();
+
+    while (currentLine !== 'END') {
+
+        let tokens = currentLine.split('->');
+        let command = tokens[0];
+
+        if (command === 'Add') {
+
+            let road = tokens[1];
+            let racer = tokens[2];
+
+            if (!roadsAndRacers.hasOwnProperty(road)) {
+                roadsAndRacers[road] = [racer];
+            } else {
+                roadsAndRacers[road].push(racer);
+            }
+
+        } else if (command === 'Move') {
+            let currentRoad = tokens[1];
+            let racer = tokens[2];
+            let nextRoad = tokens[3];
+
+            if (roadsAndRacers[currentRoad].includes(racer)) {
+                let racerIndex = roadsAndRacers[currentRoad].indexOf(racer);
+                roadsAndRacers[currentRoad].splice(racerIndex, 1);
+                roadsAndRacers[nextRoad].push(racer);
+            }
+        } else if (command === 'Close') {
+
+            let road = tokens[1];
+            delete roadsAndRacers[road];
+        }
+
+        currentLine = arr.shift();
+    }
+
+    let unsortedRoadsAndRacers = Array.from(Object.entries(roadsAndRacers));
+    let sortedRoadsAndRacers = unsortedRoadsAndRacers.sort((a, b) => {
+
+        if (a[1].length !== b[1].length) {
+            return b[1].length - a[1].length;
+        } else {
+            return a[0].localeCompare(b[0]);
+        }
+
+    });
+
+    console.log('Practice sessions:');
+    sortedRoadsAndRacers.forEach(element => {
+        console.log(element[0]);
+        element[1].forEach(racer => {
+            console.log(`++${racer}`);
+        });
+    });
+}
+
+solve([
+  'Add->Glen Vine->Steve Hislop',
+  'Add->Ramsey road->John McGuinness ',
+  'Add->Glen Vine->Ian Hutchinson',
+  'Add->Ramsey road->Dave Molyneux',
+  'Move->Ramsey road->Hugh Earnsson->Glen Vine',
+  'Add->A18 Snaefell mountain road->Mike Hailwood',
+  'Add->Braddan->Geoff Duke',
+  'Move->A18 Snaefell mountain road->Mike Hailwood->Braddan',
+  'Move->Braddan->John McGuinness->Glen Vine',
+  'Close->A18 Snaefell mountain road',
+  'END'
+]);
