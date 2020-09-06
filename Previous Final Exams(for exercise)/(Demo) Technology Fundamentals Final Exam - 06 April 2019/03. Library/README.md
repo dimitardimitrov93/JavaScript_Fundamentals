@@ -1,4 +1,4 @@
-# Simple Application that follows the MVC Pattern has the functionality to store books with their name, author and price in a non-relation DB.
+# Simple Application that follows the MVC Pattern and has the functionality to store books with their name, author and price in a non-relation DB.
 
 Used technologies:
 
